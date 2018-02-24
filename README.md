@@ -81,3 +81,9 @@ tajawal/app/src/tests/coverage/src/index.html
 
 
 
+### CI
+
+- Implement[scrutinizer-ci](https://scrutinizer-ci.com)  CI tool for the project
+
+![ScreenShot](scrutinizer-ci-(Native).png)
+
