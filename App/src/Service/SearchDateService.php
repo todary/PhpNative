@@ -2,12 +2,12 @@
 
 namespace App\Src\Service;
 
-use App\Src\Service\ServiceInterface;
+use App\Src\Service\SearchServiceInterface;
 
 /**
  * Class DateService
  */
-class DateService implements ServiceInterface
+class SearchDateService implements SearchServiceInterface
 {
 
     /**

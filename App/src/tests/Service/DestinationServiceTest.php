@@ -1,6 +1,6 @@
 <?php
 
-use App\Src\Service\DestinationService;
+use App\Src\Service\SearchDestinationService;
 
 class DestinationServiceTest extends \PHPUnit\Framework\TestCase
 {
@@ -15,7 +15,7 @@ class DestinationServiceTest extends \PHPUnit\Framework\TestCase
 
         $hotels = json_decode($hotels, true);
         $this->data = $hotels['hotels']??[];
-        $this->destinationServiceObject = new DestinationService($this->data,'cairo');
+        $this->destinationServiceObject = new SearchDestinationService($this->data,'cairo');
     }
 
     public function testSearchNameService()

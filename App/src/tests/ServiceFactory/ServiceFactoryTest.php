@@ -2,10 +2,10 @@
 
 
 use  App\Src\ServiceFactory\ServiceFactory;
-use App\Src\Service\NameService;
-use App\Src\Service\DestinationService;
-use App\Src\Service\PriceService;
-use App\Src\Service\DateService;
+use App\Src\Service\SearchNameService;
+use App\Src\Service\SearchDestinationService;
+use App\Src\Service\SearchPriceService;
+use App\Src\Service\SearchDateService;
 
 class ServiceFactoryTest extends \PHPUnit\Framework\TestCase
 {
@@ -29,19 +29,19 @@ class ServiceFactoryTest extends \PHPUnit\Framework\TestCase
 
         return [
             [
-                new NameService([], '')
+                new SearchNameService([], '')
                 , $object->create('name', [], ['name' => ''])
             ],
             [
-                new DestinationService([], '')
+                new SearchDestinationService([], '')
                 , $object->create('destination', [], ['city' => ''])
             ],
             [
-                new PriceService([], 0, 0)
+                new SearchPriceService([], 0, 0)
                 , $object->create('price', [], ['min' => 0, 'max' => 0])
             ],
             [
-                new DateService([], '10-10-2020', '15-10-2020')
+                new SearchDateService([], '10-10-2020', '15-10-2020')
                 , $object->create('date', [], ['from' => '10-10-2020', 'to' => '15-10-2020'])
             ]
         ];

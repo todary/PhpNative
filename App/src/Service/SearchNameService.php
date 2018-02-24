@@ -1,15 +1,15 @@
 <?php
 
+
 namespace App\Src\Service;
 
-use App\Src\Service\ServiceInterface;
+use App\Src\Service\SearchServiceInterface;
 
 /**
- * Class DestinationService
+ * Class NameService
  */
-class DestinationService implements ServiceInterface
+class SearchNameService implements SearchServiceInterface
 {
-
 
     /**
      * @var array
@@ -19,7 +19,7 @@ class DestinationService implements ServiceInterface
     /**
      * @var
      */
-    protected $destination;
+    protected $name;
 
     /**
      * @var
@@ -33,31 +33,30 @@ class DestinationService implements ServiceInterface
 
 
     /**
-     * DestinationService constructor.
+     * NameService constructor.
      * @param array $hotels
-     * @param string $filterDestination
+     * @param $filterName
      */
-    public function __construct(array $hotels,string $filterDestination)
+    public function __construct(array $hotels,string $filterName)
     {
         $this->hotels = $hotels;
-        $this->destination = $filterDestination;
+        $this->name = $filterName;
     }
 
     /**
      * @return array
      */
-    public function search() :array
+    public function search():array
     {
         $allHotels = [];
         foreach ($this->hotels as $hotel) {
-            if (trim($hotel['city']) == $this->destination) {
+            if ($hotel['name'] == $this->name) {
                 $allHotels[] = $hotel;
             }
         }
         $this->afterSearch = $allHotels;
         return $allHotels;
     }
-
 
     /**
      * @return mixed

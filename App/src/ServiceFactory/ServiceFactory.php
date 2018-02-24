@@ -3,10 +3,10 @@
 
 namespace App\Src\ServiceFactory;
 
-use App\Src\Service\NameService;
-use App\Src\Service\DestinationService;
-use App\Src\Service\PriceService;
-use App\Src\Service\DateService;
+use App\Src\Service\SearchNameService;
+use App\Src\Service\SearchDestinationService;
+use App\Src\Service\SearchPriceService;
+use App\Src\Service\SearchDateService;
 
 
 /**
@@ -26,16 +26,16 @@ class ServiceFactory extends FactoryMethod
 
         switch ($type) {
             case 'name':
-                $object = new NameService($data, $filter['name']);
+                $object = new SearchNameService($data, $filter['name']);
                 return $object;
             case 'destination':
-                $object = new DestinationService($data, $filter['city']);
+                $object = new SearchDestinationService($data, $filter['city']);
                 return $object;
             case 'price':
-                $object = new PriceService($data, $filter['min'], $filter['max']);
+                $object = new SearchPriceService($data, $filter['min'], $filter['max']);
                 return $object;
             case 'date':
-                $object = new DateService($data, $filter['from'], $filter['to']);
+                $object = new SearchDateService($data, $filter['from'], $filter['to']);
                 return $object;
             default:
                 throw new \InvalidArgumentException("$type is not a valid Transport");

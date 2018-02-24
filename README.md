@@ -42,11 +42,11 @@ php index.php
 ```
 
 ```
-index.php?type=name&name=test  to search by name
+index.php?type=name&name=Concorde Hotel&sort=price  to search by name
 ```
 
 ```
-index.php?type=destination&city=test  to search by destination
+index.php?type=destination&city=Manila&sort=pricet  to search by destination
 ```
 
 

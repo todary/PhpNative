@@ -2,23 +2,23 @@
 
 namespace App\Src\Sort;
 
-use App\Src\Service\ServiceInterface;
+use App\Src\Service\SearchServiceInterface;
 
-class PriceSort implements SortInterface
+class ArraySort implements SortInterface
 {
 
     protected $objectSearch;
 
-    public function __construct(ServiceInterface $searchObject)
+    public function __construct(SearchServiceInterface $searchObject)
     {
         $this->objectSearch = $searchObject;
     }
 
-    public function sort(): array
+    public function sort(string $field): array
     {
         $arraySearch = $this->objectSearch->getAfterSearch();
         foreach ($arraySearch as $key => $hotel) {
-            $vc_array_name[$key] = $hotel['price'];
+            $vc_array_name[$key] = $hotel[$field];
         }
         array_multisort($vc_array_name, SORT_ASC, $arraySearch);
         $this->objectSearch->setAfterSort($arraySearch);

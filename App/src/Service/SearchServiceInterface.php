@@ -2,7 +2,7 @@
 
 namespace App\Src\Service;
 
-interface ServiceInterface
+interface SearchServiceInterface
 {
     public function search();
 }
