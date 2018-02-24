@@ -1,0 +1,20 @@
+{
+  "require": {
+    "phpunit/phpunit": "^6.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app"
+    }
+  },
+  "name": "TRIP SORTER",
+  "authors": [
+    {
+      "name": "Abanoub Raafat Todary",
+      "email": "abanob.todary@gmail.com"
+    }
+  ],
+  "config": {
+    "bin-dir": "scripts"
+  }
+}

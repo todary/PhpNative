@@ -1,0 +1,27 @@
+# Config file for https://travis-ci.org/
+# Validate this file here - http://lint.travis-ci.org/
+
+language: php
+
+# Define the php versions against we want to test our code
+php:
+    - 7.1
+    - 7.2
+
+
+sudo: false
+
+# Note: Code coverage requires php-xDebug extension enabled on CI server
+
+before_install:
+    # Prevents global install of dev dependecies failing (due to Roave\BetterReflection:@dev)
+    - composer global config minimum-stability dev
+    - composer global config prefer-stable true
+
+install:
+    # install composer dependencies
+    - composer install
+    # Create composer global installs
+    - composer create-project apigen/apigen:dev-master temp/apigen-project
+    - composer global require apigen/apigen:dev-master
+
